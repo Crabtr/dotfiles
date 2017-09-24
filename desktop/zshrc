@@ -1,0 +1,53 @@
+export ZSH=/Users/evan/.oh-my-zsh
+
+ZSH_THEME="crabtr"
+
+ENABLE_CORRECTION="true"
+
+plugins=(git cargo)
+
+source $ZSH/oh-my-zsh.sh
+
+# Base16 Shell
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# Go paths
+export GOPATH=$HOME/Documents/code/Go
+export GOBIN=$GOPATH/bin
+
+# Custom paths for code directories
+export CODE=$HOME/Documents/code
+export GOWORK=$GOPATH/src/github.com/crabtr
+export RUSTWORK=$CODE/Rust
+export PYWORK=$CODE/Python
+export JSWORK=$CODE/JS
+
+export PATH="/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:$GOPATH/bin:/Users/evan/.cargo/bin"
+
+alias vim="/usr/local/Cellar/vim/8.0.1100_1/bin/vim"
+alias google-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias google-chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
+alias db_browser="/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite"
+
+alias load_ssl="export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2k/include && export OPENSSL_LIB_DIR=/usr/local/Cellar/openssl/1.0.2k/lib"
+
+# Convert markdown to html
+function md2html {
+    if [ -z "$2" ]; then
+        markdown $1 > "$(echo $1 | cut -f 1 -d '.').html"
+    else
+        markdown $1 > $2
+    fi
+}
+
+# Format JSON data
+function format_json {
+    python3 -m json.tool $1 > /tmp/tmpdata.json
+    rm $1
+    cat /tmp/tmpdata.json > $1
+    rm /tmp/tmpdata.json
+}
+
+# Usage: strlen "string in quotes"
+function strlen() { temp=$1; echo "${#temp}" }

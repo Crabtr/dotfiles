@@ -1,0 +1,127 @@
+"""""""""""""""""""""""
+" Vundle installation "
+"""""""""""""""""""""""
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+Plugin 'google/vim-searchindex'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mbbill/undotree'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'SuperTab'
+Plugin 'plasticboy/vim-markdown'
+" Go
+Plugin 'fatih/vim-go'
+" Rust
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'cespare/vim-toml'
+" Python
+Plugin 'davidhalter/jedi-vim'
+Plugin 'tshirtman/vim-cython'
+" Javascript/web
+Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
+call vundle#end()
+
+""""""""""""""
+" Aesthetics "
+""""""""""""""
+syntax on
+colorscheme base16-ashes
+" colorscheme base16-ocean
+" colorscheme base16-harmonic16-light
+let base16colorspace=256
+set background=dark
+set t_Co=256
+set title
+set ruler
+set laststatus=2
+set wildmenu
+set wildmode=longest,full
+set number
+set cursorline
+set colorcolumn=80
+set novisualbell
+set noerrorbells
+set ttyfast
+set lazyredraw
+set showcmd
+set scrolloff=999
+
+"""""""""""""""""
+" Configuration "
+"""""""""""""""""
+filetype plugin indent on
+set encoding=utf-8
+set clipboard=unnamed
+set virtualedit=onemore
+set backspace=indent,eol,start
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set autoindent
+set copyindent
+set nowrap
+set showmatch
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set hidden
+set noswapfile
+set nobackup
+set nowb
+set history=1000
+set undolevels=1000
+set splitbelow
+set splitright
+set omnifunc=syntaxcomplete#Complete.
+
+""""""""""""""""""""""""
+" Plugin Configuration "
+""""""""""""""""""""""""
+" Airline straight edges
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#bufferline#enabled = 1
+
+" SuperTab functionality
+" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+" NeoComplete configuration
+let g:neocomplete#enable_at_startup = 1
+set completeopt-=menu
+
+" vim-rust settings
+let g:rustfmt_autosave = 1
+
+" vim-racer settings
+set hidden
+let g:racer_cmd = "/Users/evan/.cargo/bin/racer"
+
+" vim-go settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:vim_markdown_folding_disabled = 1
+
+au FileType markdown set spell textwidth=79 wrapmargin=2
+
+"""""""""""""""""""""""
+" Remaps and keybinds "
+"""""""""""""""""""""""
+nnoremap <C-l> :let @/ = ""<CR>
