@@ -25,7 +25,7 @@ export JSWORK=$CODE/JS
 
 export PATH="$PATH:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:$GOPATH/bin:/Users/evan/.cargo/bin"
 
-alias vim="/usr/local/Cellar/vim/8.0.1100_1/bin/vim"
+alias vim="/usr/local/Cellar/vim/8.0.1175/bin/vim"
 alias curl="/usr/local/opt/curl/bin/curl"
 alias google-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias db_browser="/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite"
