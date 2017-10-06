@@ -23,11 +23,11 @@ export RUSTWORK=$CODE/Rust
 export PYWORK=$CODE/Python
 export JSWORK=$CODE/JS
 
-export PATH="/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:$GOPATH/bin:/Users/evan/.cargo/bin"
+export PATH="$PATH:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:$GOPATH/bin:/Users/evan/.cargo/bin"
 
 alias vim="/usr/local/Cellar/vim/8.0.1100_1/bin/vim"
+alias curl="/usr/local/opt/curl/bin/curl"
 alias google-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias google-chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
 alias db_browser="/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite"
 
 alias load_ssl="export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2k/include && export OPENSSL_LIB_DIR=/usr/local/Cellar/openssl/1.0.2k/lib"
