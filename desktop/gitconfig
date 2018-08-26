@@ -1,9 +1,3 @@
 [user]
 	email = evan.crabtr@gmail.com
-	name = Evan
-[core]
-	editor = /usr/bin/vim
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
+	name = Evan Crabtree

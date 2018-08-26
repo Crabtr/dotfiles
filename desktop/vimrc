@@ -14,7 +14,7 @@ Plugin 'google/vim-searchindex'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mbbill/undotree'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'SuperTab'
+Plugin 'ervandew/supertab'
 Plugin 'plasticboy/vim-markdown'
 " Go
 Plugin 'fatih/vim-go'
@@ -23,9 +23,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 Plugin 'cespare/vim-toml'
 " Python
-Plugin 'davidhalter/jedi-vim'
-Plugin 'tshirtman/vim-cython'
-" Javascript/web
+Plugin 'python-mode/python-mode'
+" JavaScript/TypeScript/web
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 call vundle#end()
@@ -34,18 +33,16 @@ call vundle#end()
 " Aesthetics "
 """"""""""""""
 syntax on
-colorscheme base16-ashes
-" colorscheme base16-ocean
-" colorscheme base16-harmonic16-light
 let base16colorspace=256
+colorscheme base16-monokai
 set background=dark
 set t_Co=256
+set number
 set title
 set ruler
 set laststatus=2
 set wildmenu
 set wildmode=longest,full
-set number
 set cursorline
 set colorcolumn=80
 set novisualbell
@@ -60,7 +57,6 @@ set scrolloff=999
 """""""""""""""""
 filetype plugin indent on
 set encoding=utf-8
-set clipboard=unnamed
 set virtualedit=onemore
 set backspace=indent,eol,start
 set tabstop=4
@@ -72,7 +68,7 @@ set autoindent
 set copyindent
 set nowrap
 set showmatch
-set ignorecase
+" set ignorecase
 set smartcase
 set hlsearch
 set incsearch
@@ -84,7 +80,23 @@ set history=1000
 set undolevels=1000
 set splitbelow
 set splitright
-set omnifunc=syntaxcomplete#Complete.
+set omnifunc=syntaxcomplete#Complete
+" set nofoldenable
+
+" Settings for only buffers with markdown in them
+autocmd FileType markdown setlocal spell textwidth=79 wrapmargin=2
+
+" GVim only settings
+if has("gui_running")
+    set columns=120 lines=60
+    set belloff=all
+    set mouse=a
+    set scrolloff=0
+    let base16colorspace=256
+    colorscheme base16-one-light
+    set background=dark
+    set guifont=Menlo:h11
+endif
 
 """"""""""""""""""""""""
 " Plugin Configuration "
@@ -96,10 +108,14 @@ let g:airline#extensions#bufferline#enabled = 1
 
 " SuperTab functionality
 " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " NeoComplete configuration
 let g:neocomplete#enable_at_startup = 1
 set completeopt-=menu
+
+" vim-markdown settings
+let g:vim_markdown_folding_disabled = 1
 
 " vim-rust settings
 let g:rustfmt_autosave = 1
@@ -109,17 +125,18 @@ set hidden
 let g:racer_cmd = "/Users/evan/.cargo/bin/racer"
 
 " vim-go settings
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
 let g:go_highlight_build_constraints = 1
 
-let g:vim_markdown_folding_disabled = 1
-
-au FileType markdown set spell textwidth=79 wrapmargin=2
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_version_warning = 0
 
 """""""""""""""""""""""
 " Remaps and keybinds "
