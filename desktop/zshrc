@@ -30,20 +30,11 @@ export RUSTWORK=$CODE/Rust
 
 export PATH="$PATH:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:$GOPATH/bin:/Users/evan/.cargo/bin"
 
-<<<<<<< HEAD
 alias ll="ls -alh"
 alias glog="git log --graph --decorate"
 
 alias vim="/usr/local/Cellar/vim/8.1.0300/bin/vim"
-# alias gcc="/usr/local/Cellar/gcc/7.3.0/bin/gcc-7"
-=======
-export PATH="$PATH:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:$GOPATH/bin:/Users/evan/.cargo/bin"
-
-alias vim="/usr/local/Cellar/vim/8.0.1175/bin/vim"
-alias curl="/usr/local/opt/curl/bin/curl"
-alias google-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias db_browser="/Applications/DB\ Browser\ for\ SQLite.app/Contents/MacOS/DB\ Browser\ for\ SQLite"
->>>>>>> cdee956c57bb3987e48e7ab41798119e4fbe3e3d
+# alias gcc="/usr/local/Cellar/gcc/8.2.0/bin/gcc-8"
 
 # alias load_ssl="export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2k/include && export OPENSSL_LIB_DIR=/usr/local/Cellar/openssl/1.0.2k/lib"
 
