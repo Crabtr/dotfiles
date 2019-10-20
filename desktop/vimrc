@@ -1,12 +1,12 @@
-"""""""""""""""""""""""
-" Vundle installation "
-"""""""""""""""""""""""
+""""""""""
+" Vundle "
+""""""""""
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'chriskempson/base16-vim'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'danielwe/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-bufferline'
@@ -15,26 +15,34 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mbbill/undotree'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
+Plugin 'danro/rename.vim'
+
+" Markdown
 Plugin 'plasticboy/vim-markdown'
+
 " Go
 Plugin 'fatih/vim-go'
-" Rust
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'cespare/vim-toml'
+
 " Python
-Plugin 'python-mode/python-mode'
-" JavaScript/TypeScript/web
+Plugin 'hdima/python-syntax'
+Plugin 'davidhalter/jedi-vim'
+
+" JavaScript
 Plugin 'pangloss/vim-javascript'
-Plugin 'mattn/emmet-vim'
+
+" Rust
+" Plugin 'rust-lang/rust.vim'
+" Plugin 'racer-rust/vim-racer'
+" Plugin 'cespare/vim-toml'
 call vundle#end()
+filetype plugin indent on
 
 """"""""""""""
 " Aesthetics "
 """"""""""""""
 syntax on
 let base16colorspace=256
-colorscheme base16-monokai
+colorscheme base16-material-darker
 set background=dark
 set t_Co=256
 set number
@@ -55,7 +63,6 @@ set scrolloff=999
 """""""""""""""""
 " Configuration "
 """""""""""""""""
-filetype plugin indent on
 set encoding=utf-8
 set virtualedit=onemore
 set backspace=indent,eol,start
@@ -88,14 +95,15 @@ autocmd FileType markdown setlocal spell textwidth=79 wrapmargin=2
 
 " GVim only settings
 if has("gui_running")
-    set columns=120 lines=60
+    set guifont=Menlo:h11
+    set columns=115 lines=57
     set belloff=all
     set mouse=a
     set scrolloff=0
     let base16colorspace=256
+    " colorscheme base16-solarflare
     colorscheme base16-one-light
     set background=dark
-    set guifont=Menlo:h11
 endif
 
 """"""""""""""""""""""""
@@ -114,15 +122,16 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:neocomplete#enable_at_startup = 1
 set completeopt-=menu
 
-" vim-markdown settings
-let g:vim_markdown_folding_disabled = 1
+" nerdcommenter settings
+" let g:NERDSpaceDelims = 1
+" let g:NERDCompactSexyComs = 1
 
 " vim-rust settings
 let g:rustfmt_autosave = 1
 
 " vim-racer settings
-set hidden
-let g:racer_cmd = "/Users/evan/.cargo/bin/racer"
+" set hidden
+" let g:racer_cmd = "/Users/evan/.cargo/bin/racer"
 
 " vim-go settings
 let g:go_highlight_operators = 1
@@ -137,6 +146,12 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_version_warning = 0
+
+let g:vim_markdown_folding_disabled = 1
+
+let g:python_highlight_all = 1
+
+" let g:pymode_python = 'python3'
 
 """""""""""""""""""""""
 " Remaps and keybinds "

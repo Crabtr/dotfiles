@@ -27,21 +27,25 @@ export JAVAWORK=$CODE/Java
 export JSWORK=$CODE/Javascript
 export PYWORK=$CODE/Python
 export RUSTWORK=$CODE/Rust
+export BASHWORK=$CODE/Bash
+export DOTFILES=$CODE/dotfiles
 
-export PATH="$PATH:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/mysql/bin:$GOPATH:/Users/evan/.cargo/bin"
+export PATH="$PATH:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/mysql/bin:$GOPATH:$GOBIN:/Users/evan/.cargo/bin"
 
 alias ll="ls -alh"
-alias glog="git log --graph --decorate"
+alias gg="git log --graph --decorate"
 alias smerge="/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge ."
 
-# alias vim="/usr/local/Cellar/vim/8.1.0500/bin/vim"
 # alias gcc="/usr/local/Cellar/gcc/7.3.0/bin/gcc-7"
 
 # It's ridiculous I have to do this
 # alias load_ssl="export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include && export OPENSSL_LIB_DIR=/usr/local/Cellar/openssl/1.0.2p/lib"
 
-alias resize_twitch="osascript -e 'tell application \"Firefox\" to set the bounds of front window to {-1710, 22, 0, 1080}'"
+alias resize_small="osascript -e 'tell application \"Firefox\" to set the bounds of front window to {320, 55, 1600, 1046}'"
+alias resize_twitch="osascript -e 'tell application \"Firefox\" to set the bounds of front window to {-1670, 22, 0, 1080}'"
+# alias resize_twitch="osascript -e 'tell application \"Firefox\" to set the bounds of front window to {1920, 22, 3590, 1080}'"
 alias resize_youtube="osascript -e 'tell application \"Firefox\" to set the bounds of front window to {-1676, 22, 0, 1080}'"
+alias resize_hltv="osascript -e 'tell application \"Firefox\" to set the bounds of front window to {2086, 70, 3673, 1032}'"
 alias resize_netflix="osascript -e 'tell application \"Firefox\" to set the bounds of front window to {268, 97, 1634, 947}'"
 alias resize_vlc="osascript -e 'tell application \"VLC\" to set bounds of front window to {-1600, 22, -320, 800}'"
 
@@ -67,3 +71,4 @@ function format_json {
 function strlen() {
     temp=$1; echo "${#temp}"
 }
+export PATH="/usr/local/sbin:$PATH"
