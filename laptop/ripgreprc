@@ -1,0 +1,14 @@
+# --pretty, makes the output work with less
+-p
+
+# Don't let ripgrep vomit really long lines to my terminal.
+--max-columns=150
+
+# Most searches are shallow
+--max-depth=1
+
+# Because who cares about case!?
+--smart-case
+
+# Remove whitespace
+--trim

@@ -1,0 +1,161 @@
+""""""""""
+" Vundle "
+""""""""""
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'danielwe/base16-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+Plugin 'google/vim-searchindex'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mbbill/undotree'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'ervandew/supertab'
+" Plugin 'danro/rename.vim'
+
+" Markdown
+Plugin 'plasticboy/vim-markdown'
+
+" Go
+Plugin 'fatih/vim-go'
+
+" Python
+Plugin 'hdima/python-syntax'
+Plugin 'davidhalter/jedi-vim'
+
+" JavaScript
+Plugin 'pangloss/vim-javascript'
+
+" Rust
+" Plugin 'rust-lang/rust.vim'
+" Plugin 'racer-rust/vim-racer'
+" Plugin 'cespare/vim-toml'
+call vundle#end()
+filetype plugin indent on
+
+""""""""""""""
+" Aesthetics "
+""""""""""""""
+syntax on
+let base16colorspace=256
+" colorscheme base16-material-darker
+" colorscheme base16-one-light
+colorscheme base16-atelier-cave-light
+set background=dark
+set t_Co=256
+set number
+set title
+set ruler
+set laststatus=2
+set wildmenu
+set wildmode=longest,full
+set cursorline
+set colorcolumn=80
+set novisualbell
+set noerrorbells
+set ttyfast
+set lazyredraw
+set showcmd
+set scrolloff=999
+
+"""""""""""""""""
+" Configuration "
+"""""""""""""""""
+set encoding=utf-8
+set virtualedit=onemore
+set backspace=indent,eol,start
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set autoindent
+set copyindent
+set nowrap
+set showmatch
+" set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set hidden
+set noswapfile
+set nobackup
+set nowb
+set history=1000
+set undolevels=1000
+set splitbelow
+set splitright
+set omnifunc=syntaxcomplete#Complete
+" set nofoldenable
+
+" Settings for only buffers with markdown in them
+autocmd FileType markdown setlocal spell textwidth=79 wrapmargin=2
+
+" GVim only settings
+if has("gui_running")
+    set guifont=Menlo:h11
+    set columns=115 lines=57
+    set belloff=all
+    set mouse=a
+    set scrolloff=0
+    let base16colorspace=256
+    " colorscheme base16-solarflare
+    colorscheme base16-one-light
+    set background=dark
+endif
+
+""""""""""""""""""""""""
+" Plugin Configuration "
+""""""""""""""""""""""""
+" Airline straight edges
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#bufferline#enabled = 1
+
+" SuperTab functionality
+" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" NeoComplete configuration
+let g:neocomplete#enable_at_startup = 1
+set completeopt-=menu
+
+" nerdcommenter settings
+" let g:NERDSpaceDelims = 1
+" let g:NERDCompactSexyComs = 1
+
+" vim-rust settings
+let g:rustfmt_autosave = 1
+
+" vim-racer settings
+" set hidden
+" let g:racer_cmd = "/Users/evan/.cargo/bin/racer"
+
+" vim-go settings
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_version_warning = 0
+
+let g:vim_markdown_folding_disabled = 1
+
+let g:python_highlight_all = 1
+
+" let g:pymode_python = 'python3'
+
+"""""""""""""""""""""""
+" Remaps and keybinds "
+"""""""""""""""""""""""
+nnoremap <C-l> :let @/ = ""<CR>
