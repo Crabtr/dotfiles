@@ -15,7 +15,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mbbill/undotree'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
-Plugin 'danro/rename.vim'
+" Plugin 'danro/rename.vim'
 
 " Markdown
 Plugin 'plasticboy/vim-markdown'

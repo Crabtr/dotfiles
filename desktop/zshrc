@@ -37,6 +37,7 @@ alias gg="git log --graph --decorate"
 alias smerge="/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge ."
 
 # alias gcc="/usr/local/Cellar/gcc/7.3.0/bin/gcc-7"
+alias curl="/usr/local/opt/curl/bin/curl"
 
 # It's ridiculous I have to do this
 # alias load_ssl="export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include && export OPENSSL_LIB_DIR=/usr/local/Cellar/openssl/1.0.2p/lib"
@@ -71,4 +72,5 @@ function format_json {
 function strlen() {
     temp=$1; echo "${#temp}"
 }
+
 export PATH="/usr/local/sbin:$PATH"
